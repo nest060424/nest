@@ -144,8 +144,8 @@ USE_TZ = True
 LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 LANGUAGES = (
-    ('ru', 'Russian'),
-    ('en', 'English'),
+    ('ru', 'Russian'),    
+    ('kk', 'Kazakh'),
 )
 
 #STATICFILES_DIRS = [
