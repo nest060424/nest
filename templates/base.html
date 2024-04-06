@@ -104,6 +104,19 @@
 							<a href="{% url 'signup' %}" class="btn btn-primary ml-2">{% trans "Sign up" %}</a>
 						</form>
 					{% endif %}
+					<form action="{% url 'set_language' %}" method="post">
+						{% csrf_token %}
+						<input name="next" type="hidden" value="{{ redirect_to }}" />
+						{% get_current_language as LANGUAGE_CODE %}
+						{% get_available_languages as LANGUAGES %}
+						{% get_language_info_list for LANGUAGES as languages %}
+						{% for language in languages %}
+						<button type="submit" class="btn btn-outline-warning" name="language" value="{{ language.code }}">
+							{{ language.code }}
+						</button>
+						{% endfor %}
+					</form>				
+					
 				</ul>
 			</div>
 		</div>
