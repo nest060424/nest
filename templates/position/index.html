@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "positions" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "positions" %}</h2>
+{% if position.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "title" %}</th>
+				<!--<th></th>-->
+				<th><a href="{% url 'position_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in position %}
+			<tr>
+				<td>
+					<p>{{ n.title }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'position_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'position_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'position_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'position_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}
+

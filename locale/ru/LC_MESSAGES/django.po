@@ -1,0 +1,624 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-20 09:20+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%"
+"100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\sequence\forms.py:68 .\templates\history\index.html:14
+#: .\templates\person\create.html:6 .\templates\person\edit.html:6
+#: .\templates\person\read.html:6 .\templates\queue\index.html:15
+#: .\templates\report.html:40 .\templates\report.html:93
+#: .\templates\statement\index.html:24
+msgid "person"
+msgstr "Гражданин"
+
+#: .\sequence\forms.py:69 .\templates\category\create.html:6
+#: .\templates\category\edit.html:6 .\templates\category\read.html:6
+#: .\templates\queue\index.html:16 .\templates\queue\list.html:14
+#: .\templates\queue\read.html:12 .\templates\report.html:41
+#: .\templates\report.html:94 .\templates\statement\check.html:11
+#: .\templates\statement\index.html:25 .\templates\statement\list.html:13
+#: .\templates\statement\read.html:12 .\templates\statement\subscribe.html:11
+msgid "category"
+msgstr "Категория"
+
+#: .\sequence\forms.py:70 .\sequence\forms.py:71 .\sequence\forms.py:72
+#: .\sequence\forms.py:73 .\sequence\forms.py:74 .\sequence\forms.py:75
+#: .\sequence\forms.py:76 .\templates\kind\create.html:6
+#: .\templates\kind\edit.html:6 .\templates\kind\read.html:6
+msgid "kind"
+msgstr "Вид документа"
+
+#: .\sequence\forms.py:169 .\templates\department\create.html:6
+#: .\templates\department\edit.html:6 .\templates\department\read.html:6
+#: .\templates\employee\index.html:13 .\templates\history\list.html:14
+msgid "department"
+msgstr "Отдел"
+
+#: .\sequence\forms.py:170 .\templates\employee\index.html:14
+#: .\templates\position\create.html:6 .\templates\position\edit.html:6
+#: .\templates\position\read.html:6
+msgid "position"
+msgstr "Должность"
+
+#: .\sequence\models.py:35
+msgid "title_category"
+msgstr "Название категории"
+
+#: .\sequence\models.py:52
+msgid "title_department"
+msgstr "Название отдела"
+
+#: .\sequence\models.py:69
+msgid "title_position"
+msgstr "Название должност"
+
+#: .\sequence\models.py:87 .\sequence\models.py:120
+msgid "surname"
+msgstr "Фамилия"
+
+#: .\sequence\models.py:88 .\sequence\models.py:121
+msgid "name"
+msgstr "Имя"
+
+#: .\sequence\models.py:89 .\sequence\models.py:122
+msgid "patronymic"
+msgstr "Отчество"
+
+#: .\sequence\models.py:92 .\templates\employee\index.html:15
+#: .\templates\employee\read.html:17
+msgid "signature"
+msgstr "Подпись"
+
+#: .\sequence\models.py:118 .\templates\person\index.html:12
+#: .\templates\person\read.html:13
+msgid "iin"
+msgstr "ИИН"
+
+#: .\sequence\models.py:119 .\templates\person\read.html:14
+msgid "birthday"
+msgstr "Дата рождения"
+
+#: .\sequence\models.py:146
+msgid "title_status"
+msgstr "Название статуса"
+
+#: .\sequence\models.py:164
+msgid "title_kind"
+msgstr "Название вида документа"
+
+#: .\sequence\models.py:181 .\templates\queue\list.html:13
+#: .\templates\report.html:39 .\templates\statement\index.html:23
+#: .\templates\statement\list.html:12
+msgid "dates"
+msgstr "Дата заявления"
+
+#: .\sequence\models.py:186
+msgid "datee"
+msgstr "Дата проверки"
+
+#: .\sequence\models.py:188 .\sequence\models.py:190 .\sequence\models.py:192
+#: .\sequence\models.py:194 .\sequence\models.py:196 .\sequence\models.py:198
+#: .\sequence\models.py:200
+msgid "paper"
+msgstr "Документ"
+
+#: .\sequence\models.py:203
+msgid "dates1"
+msgstr "Дата подписи 1"
+
+#: .\sequence\models.py:206
+msgid "dates2"
+msgstr "Дата подписи 2"
+
+#: .\sequence\models.py:209
+msgid "dates3"
+msgstr "Дата подписи 3"
+
+#: .\sequence\models.py:212
+msgid "dates4"
+msgstr "Дата подписи 4"
+
+#: .\sequence\models.py:215
+msgid "dates5"
+msgstr "Дата подписи 5"
+
+#: .\sequence\models.py:235 .\templates\queue\index.html:14
+#: .\templates\report.html:92
+msgid "dateq"
+msgstr "Дата постановки в очередь"
+
+#: .\sequence\models.py:236
+msgid "queue_details"
+msgstr "Примечание"
+
+#: .\sequence\models.py:237 .\templates\queue\index.html:17
+#: .\templates\report.html:95
+msgid "dateq2"
+msgstr "Дата снятия с очереди"
+
+#: .\sequence\models.py:238
+msgid "queue2_details"
+msgstr "Основание снятия с очереди"
+
+#: .\sequence\models.py:258 .\templates\history\index.html:13
+#: .\templates\history\list.html:12
+msgid "dateh"
+msgstr "Дата"
+
+#: .\sequence\models.py:259
+msgid "history_details"
+msgstr "Детали"
+
+#: .\sequence\models.py:279 .\templates\news\index.html:12
+msgid "daten"
+msgstr "Дата"
+
+#: .\sequence\models.py:280
+msgid "title_news"
+msgstr "Заголовок новости"
+
+#: .\sequence\models.py:281
+msgid "details_news"
+msgstr "Подробности"
+
+#: .\sequence\models.py:282
+msgid "photo_news"
+msgstr "Фотография"
+
+#: .\templates\base.html:37
+msgid "Home"
+msgstr "Главная"
+
+#: .\templates\base.html:44 .\templates\base.html:78
+#: .\templates\news\index.html:3 .\templates\news\index.html:6
+#: .\templates\news\list.html:3 .\templates\news\list.html:6
+msgid "newss"
+msgstr "Новости"
+
+#: .\templates\base.html:47
+msgid "links"
+msgstr "Ссылки"
+
+#: .\templates\base.html:50 .\templates\faq.html:7
+msgid "FAQ"
+msgstr "Ответы на вопросы"
+
+#: .\templates\base.html:53 .\templates\contact.html:8
+msgid "contacts"
+msgstr "Контакты"
+
+#: .\templates\base.html:63 .\templates\category\index.html:3
+#: .\templates\category\index.html:6
+msgid "categorys"
+msgstr "Категория учета"
+
+#: .\templates\base.html:64 .\templates\status\index.html:3
+#: .\templates\status\index.html:6
+msgid "statuss"
+msgstr "Статус заявления"
+
+#: .\templates\base.html:65 .\templates\kind\index.html:3
+#: .\templates\kind\index.html:6
+msgid "kinds"
+msgstr "Виды документов"
+
+#: .\templates\base.html:67 .\templates\department\index.html:3
+#: .\templates\department\index.html:6
+msgid "departments"
+msgstr "Отделы"
+
+#: .\templates\base.html:68 .\templates\position\index.html:3
+#: .\templates\position\index.html:6
+msgid "positions"
+msgstr "Должности"
+
+#: .\templates\base.html:69 .\templates\employee\index.html:3
+#: .\templates\employee\index.html:6
+msgid "employees"
+msgstr "Сотрудники"
+
+#: .\templates\base.html:71 .\templates\person\index.html:3
+#: .\templates\person\index.html:6
+msgid "persons"
+msgstr "Граждане"
+
+#: .\templates\base.html:72 .\templates\base.html:82 .\templates\index.html:28
+#: .\templates\index.html:31
+msgid "Consider_applications"
+msgstr "Рассмотреть заявления"
+
+#: .\templates\base.html:73 .\templates\history\index.html:3
+#: .\templates\history\index.html:6 .\templates\history\list.html:3
+#: .\templates\history\list.html:6
+msgid "historys"
+msgstr "История"
+
+#: .\templates\base.html:74 .\templates\queue\index.html:3
+#: .\templates\queue\index.html:6 .\templates\queue\list.html:3
+#: .\templates\queue\list.html:6
+msgid "queues"
+msgstr "Очередь"
+
+#: .\templates\base.html:76 .\templates\base.html:86
+msgid "reports"
+msgstr "Отчеты"
+
+#: .\templates\base.html:90 .\templates\statement\index.html:3
+#: .\templates\statement\index.html:6 .\templates\statement\list.html:3
+#: .\templates\statement\list.html:6
+msgid "statements"
+msgstr "Заявления"
+
+#: .\templates\base.html:91
+msgid "history"
+msgstr "История"
+
+#: .\templates\base.html:92
+msgid "cabinet?"
+msgstr "Личный кабинет"
+
+#: .\templates\base.html:95 .\templates\registration\my_account.html:4
+#: .\templates\registration\my_account.html:10
+msgid "My account"
+msgstr "Моя учетная запись"
+
+#: .\templates\base.html:96
+#: .\templates\registration\password_change_form.html:9
+#: .\templates\registration\password_change_form.html:14
+msgid "Change password"
+msgstr "Сменить пароль"
+
+#: .\templates\base.html:98
+msgid "Log out"
+msgstr "Выход"
+
+#: .\templates\base.html:103
+msgid "Log In"
+msgstr "Вход"
+
+#: .\templates\base.html:104 .\templates\registration\signup.html:4
+#: .\templates\registration\signup.html:10
+msgid "Sign up"
+msgstr "Регистрация"
+
+#: .\templates\category\create.html:3 .\templates\department\create.html:3
+#: .\templates\employee\create.html:3 .\templates\kind\create.html:3
+#: .\templates\news\create.html:3 .\templates\news\index.html:45
+#: .\templates\person\create.html:3 .\templates\position\create.html:3
+#: .\templates\statement\create.html:3 .\templates\status\create.html:3
+msgid "Create"
+msgstr "Создать"
+
+#: .\templates\category\create.html:13 .\templates\category\edit.html:13
+#: .\templates\department\create.html:13 .\templates\department\edit.html:13
+#: .\templates\employee\create.html:13 .\templates\employee\edit.html:13
+#: .\templates\kind\create.html:13 .\templates\kind\edit.html:13
+#: .\templates\person\create.html:13 .\templates\person\edit.html:13
+#: .\templates\position\create.html:13 .\templates\position\edit.html:13
+#: .\templates\queue\edit.html:19 .\templates\statement\create.html:13
+#: .\templates\statement\edit.html:13 .\templates\status\create.html:13
+#: .\templates\status\edit.html:13
+msgid "Save"
+msgstr "Сохранить"
+
+#: .\templates\category\create.html:14 .\templates\category\edit.html:14
+#: .\templates\category\read.html:18 .\templates\department\create.html:14
+#: .\templates\department\edit.html:14 .\templates\department\read.html:18
+#: .\templates\employee\create.html:14 .\templates\employee\edit.html:14
+#: .\templates\employee\read.html:21 .\templates\kind\create.html:14
+#: .\templates\kind\edit.html:14 .\templates\kind\read.html:18
+#: .\templates\person\create.html:14 .\templates\person\edit.html:14
+#: .\templates\person\read.html:22 .\templates\position\create.html:14
+#: .\templates\position\edit.html:14 .\templates\position\read.html:18
+#: .\templates\queue\edit.html:20 .\templates\queue\read.html:29
+#: .\templates\statement\check.html:87 .\templates\statement\create.html:14
+#: .\templates\statement\create.html:15 .\templates\statement\edit.html:14
+#: .\templates\statement\read.html:100 .\templates\statement\subscribe.html:82
+#: .\templates\status\create.html:14 .\templates\status\edit.html:14
+#: .\templates\status\read.html:18
+msgid "Back"
+msgstr "Назад"
+
+#: .\templates\category\edit.html:3 .\templates\category\index.html:24
+#: .\templates\department\edit.html:3 .\templates\department\index.html:24
+#: .\templates\employee\edit.html:3 .\templates\employee\index.html:44
+#: .\templates\kind\edit.html:3 .\templates\kind\index.html:24
+#: .\templates\news\edit.html:3 .\templates\news\index.html:35
+#: .\templates\person\edit.html:3 .\templates\position\edit.html:3
+#: .\templates\position\index.html:24 .\templates\queue\edit.html:3
+#: .\templates\queue\index.html:41 .\templates\queue\list.html:33
+#: .\templates\statement\edit.html:3 .\templates\statement\list.html:42
+#: .\templates\status\edit.html:3 .\templates\status\index.html:24
+msgid "Change"
+msgstr "Изменить"
+
+#: .\templates\category\index.html:12 .\templates\department\index.html:12
+#: .\templates\kind\index.html:12 .\templates\news\index.html:13
+#: .\templates\position\index.html:12 .\templates\status\index.html:12
+msgid "title"
+msgstr "Название"
+
+#: .\templates\category\index.html:14 .\templates\category\index.html:34
+#: .\templates\department\index.html:14 .\templates\department\index.html:34
+#: .\templates\employee\index.html:19 .\templates\employee\index.html:53
+#: .\templates\kind\index.html:14 .\templates\kind\index.html:34
+#: .\templates\news\index.html:15 .\templates\person\index.html:43
+#: .\templates\position\index.html:14 .\templates\position\index.html:34
+#: .\templates\status\index.html:14 .\templates\status\index.html:34
+msgid "Add"
+msgstr "Создать"
+
+#: .\templates\category\index.html:25 .\templates\department\index.html:25
+#: .\templates\employee\index.html:45 .\templates\kind\index.html:25
+#: .\templates\news\index.html:36 .\templates\person\index.html:35
+#: .\templates\position\index.html:25 .\templates\queue\index.html:43
+#: .\templates\queue\list.html:35 .\templates\statement\index.html:82
+#: .\templates\statement\list.html:44 .\templates\status\index.html:25
+msgid "View"
+msgstr "Просмотреть"
+
+#: .\templates\category\index.html:26 .\templates\department\index.html:26
+#: .\templates\kind\index.html:26 .\templates\news\index.html:37
+#: .\templates\position\index.html:26 .\templates\status\index.html:26
+msgid "Delete"
+msgstr "Удалить"
+
+#: .\templates\category\read.html:3 .\templates\department\read.html:3
+#: .\templates\employee\read.html:3 .\templates\kind\read.html:3
+#: .\templates\news\read.html:3 .\templates\person\read.html:3
+#: .\templates\position\read.html:3 .\templates\queue\read.html:3
+#: .\templates\statement\read.html:3 .\templates\status\read.html:3
+msgid "Read"
+msgstr "Просмотреть"
+
+#: .\templates\employee\create.html:6 .\templates\employee\edit.html:6
+#: .\templates\employee\read.html:6 .\templates\history\index.html:16
+msgid "employee"
+msgstr "Сотрудник"
+
+#: .\templates\employee\index.html:12 .\templates\person\index.html:13
+msgid "fio"
+msgstr "ФИО"
+
+#: .\templates\employee\index.html:16 .\templates\person\index.html:14
+#: .\templates\person\read.html:17
+msgid "user"
+msgstr "Логин пользователя"
+
+#: .\templates\employee\index.html:17 .\templates\person\index.html:15
+msgid "email"
+msgstr "EMail"
+
+#: .\templates\history\index.html:15 .\templates\history\list.html:13
+msgid "details"
+msgstr "Подробности"
+
+#: .\templates\index.html:4 .\templates\registration\logged_out.html:4
+#: .\templates\registration\login.html:4
+#: .\templates\registration\password_change_done.html:3
+#: .\templates\registration\password_change_form.html:3
+#: .\templates\registration\password_reset_complete.html:4
+#: .\templates\registration\password_reset_confirm.html:4
+#: .\templates\registration\password_reset_done.html:4
+#: .\templates\registration\password_reset_form.html:4
+#: .\templates\registration\register_done.html:4
+msgid "App Name"
+msgstr "Uya"
+
+#: .\templates\link.html:9
+msgid "Links"
+msgstr "Ссылки"
+
+#: .\templates\news\create.html:6 .\templates\news\edit.html:6
+#: .\templates\news\read.html:6
+msgid "news"
+msgstr "Новость"
+
+#: .\templates\queue\edit.html:6 .\templates\queue\read.html:6
+#: .\templates\statement\list.html:52
+msgid "queue"
+msgstr "Очередь"
+
+#: .\templates\queue\list.html:15 .\templates\queue\read.html:25
+#: .\templates\report.html:42 .\templates\statement\check.html:70
+#: .\templates\statement\index.html:26 .\templates\statement\list.html:14
+#: .\templates\statement\read.html:96 .\templates\statement\subscribe.html:70
+#: .\templates\status\create.html:6 .\templates\status\edit.html:6
+#: .\templates\status\read.html:6
+msgid "status"
+msgstr "Статус заявления"
+
+#: .\templates\registration\logged_out.html:6
+msgid "Logged out!"
+msgstr "Вы вышли"
+
+#: .\templates\registration\logged_out.html:7
+msgid "Login again"
+msgstr "Войти заново"
+
+#: .\templates\registration\login.html:7
+msgid "Incorrect login or password"
+msgstr "Неверный логин или пароль"
+
+#: .\templates\registration\login.html:12
+msgid "You dont have access"
+msgstr "У вас нет доступа"
+
+#: .\templates\registration\login.html:14
+msgid "Login to see this page"
+msgstr "Войдите, чтобы увидеть эту страницу"
+
+#: .\templates\registration\login.html:22
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: .\templates\registration\login.html:26
+msgid "Login"
+msgstr "Вход"
+
+#: .\templates\registration\login.html:31
+msgid "Lost password?"
+msgstr "Потеряли пароль?"
+
+#: .\templates\registration\my_account.html:14
+msgid "Save changes"
+msgstr "Сохранить изменения"
+
+#: .\templates\registration\password_change_done.html:5
+msgid "Password changed"
+msgstr "Пароль изменен"
+
+#: .\templates\registration\password_reset_complete.html:6
+msgid "Password reset completed!"
+msgstr "Сброс пароля завершен!"
+
+#: .\templates\registration\password_reset_complete.html:7
+msgid "Log in again?"
+msgstr "Войти снова?"
+
+#: .\templates\registration\password_reset_confirm.html:5
+#: .\templates\registration\password_reset_confirm.html:12
+msgid "Password reset confirmation"
+msgstr "Подтверждение сброса пароля"
+
+#: .\templates\registration\password_reset_confirm.html:17
+#: .\templates\registration\password_reset_form.html:10
+#: .\templates\registration\password_reset_form.html:15
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_confirm.html:24
+msgid "Please enter (and confirm) your new password."
+msgstr "Пожалуйста, введите (и подтвердите) новый пароль."
+
+#: .\templates\registration\password_reset_confirm.html:30
+msgid "New password:"
+msgstr "Новый пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:35
+msgid "Confirm password:"
+msgstr "Подтвердить пароль:"
+
+#: .\templates\registration\password_reset_confirm.html:46
+msgid "Password reset failed"
+msgstr "Не удалось сбросить пароль"
+
+#: .\templates\registration\password_reset_confirm.html:47
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr ""
+"Ссылка для сброса пароля недействительна, возможно, из-за того, что "
+"использовано. Пожалуйста, запросите новый сброс пароля."
+
+#: .\templates\registration\password_reset_done.html:6
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: .\templates\registration\password_reset_done.html:7
+msgid "Check your email"
+msgstr "Проверьте свою электронную почту"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Asked password reset email"
+msgstr "Электронная почта для сброса пароля"
+
+#: .\templates\registration\password_reset_email.html:2
+msgid "Follow the link below:"
+msgstr "Перейдите по ссылке ниже:"
+
+#: .\templates\registration\register_done.html:10
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+#: .\templates\registration\register_done.html:11
+msgid "Your account has been successfully created."
+msgstr "Ваша учетная запись успешно создана."
+
+#: .\templates\registration\register_done.html:11
+#: .\templates\registration\signup.html:18
+msgid "Log in"
+msgstr "Вход"
+
+#: .\templates\registration\signup.html:14
+msgid "Create an account"
+msgstr "Завести аккаунт"
+
+#: .\templates\registration\signup.html:18
+msgid "Already have an account?"
+msgstr "У вас уже есть аккаунт?"
+
+#: .\templates\report.html:7
+msgid "report"
+msgstr "Отчет"
+
+#: .\templates\report.html:32 .\templates\report.html:85
+#: .\templates\statement\index.html:16
+msgid "Apply"
+msgstr "Применить"
+
+#: .\templates\statement\check.html:3 .\templates\statement\check.html:37
+#: .\templates\statement\index.html:59 .\templates\statement\subscribe.html:37
+msgid "Check"
+msgstr "Проверить"
+
+#: .\templates\statement\check.html:6 .\templates\statement\create.html:6
+#: .\templates\statement\edit.html:6 .\templates\statement\read.html:6
+#: .\templates\statement\subscribe.html:6
+msgid "statement"
+msgstr "Заявление"
+
+#: .\templates\statement\check.html:14 .\templates\statement\read.html:15
+#: .\templates\statement\subscribe.html:14
+msgid "Documents"
+msgstr "Документы"
+
+#: .\templates\statement\check.html:42 .\templates\statement\index.html:66
+#: .\templates\statement\index.html:69 .\templates\statement\index.html:72
+#: .\templates\statement\index.html:75 .\templates\statement\index.html:78
+#: .\templates\statement\subscribe.html:3
+#: .\templates\statement\subscribe.html:42
+#: .\templates\statement\subscribe.html:74
+#: .\templates\statement\subscribe.html:81
+msgid "Subscribe"
+msgstr "Подписать"
+
+#: .\templates\statement\check.html:78
+msgid "check"
+msgstr "Проверить"
+
+#: .\templates\statement\check.html:86
+msgid "Accept"
+msgstr "Принять"
+
+#: .\templates\statement\check.html:93
+msgid "return"
+msgstr "Вернуть"
+
+#: .\templates\statement\check.html:99
+msgid "Return"
+msgstr "Вернуть"
+
+#: .\templates\statement\read.html:38
+msgid "Examination"
+msgstr "Проверка"
+
+#: .\templates\statement\read.html:47
+msgid "Signing"
+msgstr "Подписание"

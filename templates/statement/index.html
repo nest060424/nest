@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "statements" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "statements" %}</h2>
+<!--<h2>{{ signature }}</h2>-->
+<hr>
+	<form method="POST">
+		{% csrf_token %}
+		<select name="item_id">
+			{% for entry in status %}
+			<option value="{{ entry.id }}">{{ entry.title }}</option>
+			{% endfor %}
+		</select>
+		<button type="submit" class="btn btn-outline-success" style="width:120px">{% trans "Apply" %}</button>	
+	</form>
+<hr>
+{% if statement.count > 0 %}
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dates" %}</th>
+				<th>{% trans "person" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "status" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in statement %}
+			
+			{% if n.status_id == 1 %}
+			<tr style="background-color: beige">
+			{% elif n.status_id == 2 %}
+			<tr style="background-color: lightpink">
+			{% elif n.status_id == 3 %}
+			<tr style="background-color: lemonchiffon">
+			{% elif n.status_id == 4 %}
+			<tr style="background-color: lightgreen">
+			{% elif n.status_id == 5 %}
+			<tr style="background-color: lightpink">
+			{% endif %}
+				<td>
+					<p>{{ n.dates | date:"d.m.Y H:i"}}</p>	
+				</td>
+				<td>
+					<p>{{ n.person }}</p>	
+				</td>
+				<td>
+					<p>{{ n.category }}</p>	
+				</td>
+				<td>
+					<p>{{ n.status }}</p>	
+				</td>
+				<td>				
+					{% if request.user.groups.all.0.name == "Managers" %}
+						{% if n.status_id == 1 %}
+						<a href="{% url 'statement_check' n.id %}">{% trans "Check" %}</a> |						
+						{% endif %}
+					{% endif %}
+					{% if request.user.groups.all.0.name == "Commissions" %}
+					{% if n.status_id > 2 %}
+					
+						{% if n.sign1 == None and signature == 1%}
+							<a href="{% url 'statement_subscribe' n.id %}">{% trans "Subscribe" %}</a> |
+						{% endif %}
+						{% if n.sign1 != None and n.sign2 == None and signature == 2%}
+							<a href="{% url 'statement_subscribe' n.id %}">{% trans "Subscribe" %}</a> |
+						{% endif %}
+						{% if n.sign1 != None and n.sign2 != None and n.sign3 == None and signature == 3%}
+							<a href="{% url 'statement_subscribe' n.id %}">{% trans "Subscribe" %}</a> |
+						{% endif %}
+						{% if n.sign1 != None and n.sign2 != None and n.sign3 != None and n.sign4 == None and signature == 4%}
+							<a href="{% url 'statement_subscribe' n.id %}">{% trans "Subscribe" %}</a> |
+						{% endif %}
+						{% if n.sign1 != None and n.sign2 != None and n.sign3 != None and n.sign4 != None and n.sign5 == None and signature == 5%}
+							<a href="{% url 'statement_subscribe' n.id %}">{% trans "Subscribe" %}</a> |
+						{% endif %}
+					{% endif %}
+					{% endif %}
+					<a href="{% url 'statement_read' n.id %}">{% trans "View" %}</a> 
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+{% endblock content %}
+

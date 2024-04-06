@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<div class="card" style="width:100%; margin:10px">
+		<div class="card-header">
+			<h2>{% trans "Links" %}</h2>
+		</div>
+		<div class="card-body">					
+			<div class="row">
+				<h5><a href="https://www.akorda.kz/ru" target="_blank">Официальный сайт Президента Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.parlam.kz/ru" target="_blank">Официальный сайт Парламента Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://primeminister.kz/ru" target="_blank">Официальный информационный ресурс Премьер-Министра Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://egov.kz/cms/ru" target="_blank">Электронное правительство Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.gov.kz/memleket/entities/adilet?lang=ru" target="_blank">Министерство юстиции Республики Казахстан</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="https://www.gov.kz/memleket/entities/qriim?lang=ru" target="_blank">Министерство внутренних дел РК</a></h5>
+			</div>
+			<div class="row">
+				<h5><a href="http://zan.gov.kz/ru/" target="_blank">Эталонный контрольный банк нормативных правовых документов Республики Казахстан</a></h5>
+			</div>			
+		</div>
+		<div class="card-footer text-muted">
+		</div>
+	</div>	
+	
+</div>
+{% endblock content %}

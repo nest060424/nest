@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "person" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h4>{{ person.fio }}</h4>			
+		</div>
+		<div class="card-body">
+			<p>{% trans "iin" %}: {{ person.iin }}</p>						
+			<p>{% trans "birthday" %}: {{ person.birthday | date:"d.m.Y" }}</p>								
+		</div>
+		<div class="card-footer">
+			<p>{% trans "user" %}: {{ person.user  }}</p>					
+			<p>{{ person.user.email  }}</p>					
+		</div>				
+	</div>	
+	<br>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'person_index' %}">{% trans "Back" %}</a>    	
+</div>
+
+{% endblock content %}

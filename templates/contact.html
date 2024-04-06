@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<div class="col-md-3">
+		<h3 align="center">{% trans "contacts" %}</h3>		
+		<address>
+			<h2 align="center">Қарағанда,  Бұхар жырау 52</h2>			
+		</address>				
+	</div>
+	<div class="col-md-9" style="position:relative;overflow:hidden;">
+		<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.106312372808!2d73.08784095972453!3d49.802868953819186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4243472f5fa91cd3%3A0xa4ad599b2413a1e!2z0L_RgNC-0YHQvy4g0JHRg9GF0LDRgC3QltGL0YDQsNGD!5e0!3m2!1sru!2skz!4v1712384056131!5m2!1sru!2skz"  width="100%" height="500px" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+</div>
+{% endblock content %}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html>
+<head>
+	 <!-- Обязательные метатеги -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Стили -->
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--  JavaScript. Точнее - им требуются jQuery, Popper.js-->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap CSS
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<script defer src="{% static 'js/jquery.min.js' %}"></script>
+	<script defer src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script defer src="{% static 'js/popper.min.js' %}"></script>
+	-->
+
+	<!-- select-box-with-search-option-using-jquery -->
+	<link rel="stylesheet" href="{% static 'css/choosen.css' %}" />
+	<!--
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	-->
+	<script src="{% static 'js/choosen.js' %}"></script>
+	<title>{% block title %}Default title{% endblock title %}</title>
+</head>
+	<nav class="navbar navbar-expand-lg justify-content-center">
+		<div class="container">			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainMenu" aria-controls="mainMenu" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="mainMenu">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<a class="navbar-brand" href="{{ HTTP_HOST }}/">{% trans "Home" %}</a>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'news_list' %}">{% trans "newss" %}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'link' %}">{% trans "links" %}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'faq' %}">{% trans "FAQ" %}</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'contact' %}">{% trans "contacts" %}</a>
+					</li>
+					{% if user.is_authenticated %}
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{{ user.username }}
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+								{% if request.user.groups.all.0.name == "Managements" or request.user.groups.all.0.name == "Commissions" or request.user.groups.all.0.name == "Managers" %}
+									{% if request.user.groups.all.0.name == "Managers" %}
+										<li><a class="dropdown-item" href="{% url 'category_index' %}">{% trans "categorys" %}</a></li>
+										<!--<li><a class="dropdown-item" href="{% url 'status_index' %}">{% trans "statuss" %}</a></li>-->
+										<li><a class="dropdown-item" href="{% url 'kind_index' %}">{% trans "kinds" %}</a></li>
+										<div class="dropdown-divider"></div>
+										<li><a class="dropdown-item" href="{% url 'department_index' %}">{% trans "departments" %}</a></li>
+										<li><a class="dropdown-item" href="{% url 'position_index' %}">{% trans "positions" %}</a></li>
+										<li><a class="dropdown-item" href="{% url 'employee_index' %}">{% trans "employees" %}</a></li>
+										<div class="dropdown-divider"></div>
+										<li><a class="dropdown-item" href="{% url 'person_index' %}">{% trans "persons" %}</a></li>
+										<li><a class="dropdown-item" href="{% url 'statement_index' %}">{% trans "Consider_applications" %}</a></li>
+										<li><a class="dropdown-item" href="{% url 'history_index' %}">{% trans "historys" %}</a></li>
+										<li><a class="dropdown-item" href="{% url 'queue_index' %}">{% trans "queues" %}</a></li>
+										<div class="dropdown-divider"></div>
+										<li><a class="dropdown-item" href="{% url 'report' %}">{% trans "reports" %}</a></li>
+										<div class="dropdown-divider"></div>
+										<li><a class="dropdown-item" href="{% url 'news_index' %}">{% trans "newss" %}</a></li>
+										<div class="dropdown-divider"></div>
+									{% endif %}
+									{% if request.user.groups.all.0.name == "Commissions" %}
+										<li><a class="dropdown-item" href="{% url 'statement_index' %}">{% trans "Consider_applications" %}</a></li>
+										<div class="dropdown-divider"></div>
+									{% endif %}
+									{% if request.user.groups.all.0.name == "Managements" %}
+										<li><a class="dropdown-item" href="{% url 'report' %}">{% trans "reports" %}</a></li>
+										<div class="dropdown-divider"></div>
+									{% endif %}
+								{% else %}
+									<li><a class="dropdown-item" href="{% url 'statement_list' %}">{% trans "statements" %}</a></li>
+									<li><a class="dropdown-item" href="{% url 'history_list' %}">{% trans "history" %}</a></li>
+									<li><a class="dropdown-item" href="{% url 'person_edit' %}">{% trans "cabinet?" %}</a></li>
+									<div class="dropdown-divider"></div>
+								{% endif %}
+								<li><a class="dropdown-item" href="{% url 'my_account' %}">{% trans "My account" %}</a></li>
+								<li><a class="dropdown-item" href="{% url 'password_change' %}">{% trans "Change password" %}</a></li>
+								<div class="dropdown-divider"></div>
+								<li><a class="dropdown-item" href="{% url 'logout'%}?next={{request.path}}">{% trans "Log out" %}</a></li>
+							</гд>
+						</li>
+					{% else %}
+						<form class="form-inline ml-auto">
+							<a href="{% url 'login' %}" class="btn btn-outline-secondary">{% trans "Log In" %}</a>
+							<a href="{% url 'signup' %}" class="btn btn-primary ml-2">{% trans "Sign up" %}</a>
+						</form>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+<body>
+	<div class="container">
+		{% block content%}{% endblock content %}
+	</div>
+</body>
+<footer class="container-fluid text-center bg-lightgray">
+	<div class="copyrights">
+		<img src="{% static 'images/logo.png' %}" alt="logo" style="height:72px; width: 72px; padding: 10px;">
+	</div>
+</footer>
+<!-- Пагинация таблиц (Постраничный вывод) https://datatables.net/ -->
+<script src="{% static 'js/datatables.js' %}"></script>
+
+
+<link rel="stylesheet" href="{% static 'css/jquery.dataTables.min.css' %}">
+<script src= "{% static 'js/jquery.dataTables.min.js' %}"></script>
+
+<!--
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.2/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.2/js/jquery.dataTables.min.js"></script>
+-->
+
+</html>

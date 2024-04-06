@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Change" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "queue" %}</h2>
+<form method="POST" enctype="multipart/form-data">
+	<h5>{{ dates | date:"d.m.Y H:i"}}</h5>
+	<h1>{{ person }}</h1>
+	<h2>{{ category }}</h2>
+	<p>{{ dateq | date:"d.m.Y H:i"}}</p>
+	<p>{{ details }}</p>
+	<h3>{{ status }}</h3>
+	{% csrf_token %}
+    <table>
+        {{ form }}
+    </table>
+	<br>
+    <button type="submit" class="btn btn-outline-success" style="width:100px">{% trans "Save" %}</button>
+	<a class="btn btn-outline-info" style="width:100px" href="{% url 'queue_index' %}">{% trans "Back" %}</a>    
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

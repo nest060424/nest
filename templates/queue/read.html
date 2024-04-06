@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Read" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "queue" %}</h2>
+<div class="row justify-content-center">
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h5>{{ queue.statement.dates| date:"d.m.Y H:i" }}</h5>			
+			<h3>{{ queue.statement.person }}</h3>			
+			<p>{% trans "category" %}: {{ queue.statement.category }}</p>						
+		</div>
+		<div class="card-body">
+			<p>{{ queue.dateq | date:"d.m.Y H:i"}}</p>	
+			<p>{{ queue.details }}</p>	
+			{% if queue.dateq2 != None %}
+				<hr>
+				<p>{{ queue.dateq2 | date:"d.m.Y H:i"}}</p>	
+				<p>{{ queue.details2 }}</p>					
+			{% endif %}
+				
+		</div>
+		<div class="card-footer">
+			<p>{% trans "status" %}: {{ queue.statement.status }}</p>								
+		</div>				
+	</div>	
+	<br>
+	<a class="btn btn-outline-info" style="width:100px; margin-top:5px" href="{% url 'queue_index' %}">{% trans "Back" %}</a>    	
+</div>
+
+{% endblock content %}

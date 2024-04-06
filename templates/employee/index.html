@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "employees" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "employees" %}</h2>
+{% if employee.count > 0 %}
+
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "fio" %}</th>
+				<th>{% trans "department" %}</th>
+				<th>{% trans "position" %}</th>
+				<th>{% trans "signature" %}</th>
+				<th>{% trans "user" %}</th>
+				<th>{% trans "email" %}</th>				
+				<!--<th></th>-->
+				<th><a href="">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in employee %}
+			<tr>
+				<td>
+					<p>{{ n.fio }}</p>	
+				</td>
+				<td>
+					<p>{{ n.department }}</p>	
+				</td>
+				<td>
+					<p>{{ n.position }}</p>	
+				</td>
+				<td>
+					<p>{{ n.signature }}</p>	
+				</td>
+				<td>
+					<p>{{ n.user }}</p>	
+				</td>
+				<td>
+					<p>{{ n.user.email }}</p>	
+				</td>
+				<td>
+					<a href="{% url 'employee_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'employee_read' n.id %}">{% trans "View" %}</a> 					
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+{% else %}
+<a href="{% url 'employee_create'%}">{% trans "Add" %}</a>
+{% endif %}
+{% endblock content %}
+

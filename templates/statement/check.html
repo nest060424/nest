@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "Check" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "statement" %}</h2>
+	<div class="card" style="width:100%">
+		<div class="card-header">	
+			<h5>{{ statement.dates| date:"d.m.Y H:i" }}</h5>			
+			<h3>{{ statement.person }}</h3>			
+			<p>{% trans "category" %}: {{ statement.category }}</p>						
+		</div>
+		<div class="card-body">
+			<h2>{% trans "Documents" %}</h2>
+			{% if statement.paper1.url != None %}
+				<p><a href="{{ statement.paper1.url}}" target="_blank">{{ statement.kind1}}</a></p>
+			{% endif %}
+			{% if statement.paper2.url != None %}
+				<p><a href="{{ statement.paper2.url}}" target="_blank">{{ statement.kind2}}</a></p>
+			{% endif %}
+			{% if statement.paper3.url != None %}
+				<p><a href="{{ statement.paper3.url}}" target="_blank">{{ statement.kind3}}</a></p>
+			{% endif %}
+			{% if statement.paper4.url != None %}
+				<p><a href="{{ statement.paper4.url}}" target="_blank">{{ statement.kind4}}</a></p>
+			{% endif %}
+			{% if statement.paper5.url != None %}
+				<p><a href="{{ statement.paper5.url}}" target="_blank">{{ statement.kind5}}</a></p>
+			{% endif %}
+			{% if statement.paper6.url != None %}
+				<p><a href="{{ statement.paper6.url}}" target="_blank">{{ statement.kind6}}</a></p>
+			{% endif %}
+			{% if statement.paper7.url != None %}
+				<p><a href="{{ statement.paper7.url}}" target="_blank">{{ statement.kind7}}</a></p>
+			{% endif %}
+			<hr>
+			<h2>{% trans "Check" %}</h2>
+			{% if statement.examination != None %}
+				<p>{{ statement.datee| date:"d.m.Y H:i"}}: {{ statement.examination}}</p>
+			{% endif %}
+			<hr>
+			<h2>{% trans "Subscribe" %}</h2>
+			{% if statement.sign1 != None %}
+				<p>1. {{ statement.dates1| date:"d.m.Y H:i"}}: {{ statement.sign1}}</p>
+			{% else %}
+				<p>1.</p>
+			{% endif %}
+			{% if statement.sign2 != None %}
+				<p>2. {{ statement.dates2| date:"d.m.Y H:i"}}: {{ statement.sign2}}</p>
+			{% else %}
+				<p>2.</p>
+			{% endif %}
+			{% if statement.sign3 != None %}
+				<p>3. {{ statement.dates3| date:"d.m.Y H:i"}}: {{ statement.sign3}}</p>
+			{% else %}
+				<p>3.</p>
+			{% endif %}
+			{% if statement.sign4 != None %}
+				<p>4. {{ statement.dates4| date:"d.m.Y H:i"}}: {{ statement.sign4}}</p>
+			{% else %}
+				<p>4.</p>
+			{% endif %}
+			{% if statement.sign5 != None %}
+				<p>5. {{ statement.dates5| date:"d.m.Y H:i"}}: {{ statement.sign5}}</p>
+			{% else %}
+				<p>5.</p>
+			{% endif %}			
+		</div>
+		<div class="card-footer">
+			<p>{% trans "status" %}: {{ statement.status }}</p>								
+		</div>				
+	</div>	
+
+<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h2>{% trans "check" %}</h2>		
+		</div>
+		<div class="card-body">
+			<table>
+				{{ form }}
+			</table>
+		</div>		
+		<div class="card-footer">
+			<button onclick="return confirm('Принять документы?')" type="submit" class="btn btn-outline-success" style="width:100px" name="btnAccept">{% trans "Accept" %}</button>
+			<a class="btn btn-outline-info" style="width:100px" href="{% url 'statement_index' %}">{% trans "Back" %}</a>    							
+		</div>				
+	</div>
+    
+	<div class="card" style="width:100%">
+		<div class="card-header">
+			<h2>{% trans "return" %}</h2>		
+		</div>
+		<div class="card-body">
+			<textarea name="Comment" id="Comment" style="width:100%" rows="5"></textarea>
+		</div>		
+		<div class="card-footer">
+			<button onclick="return confirm('Возвратить документы?')" type="submit" class="btn btn-outline-success" style="width:100px" name="btnReturn">{% trans "Return" %}</button>
+		</div>				
+	</div>
+
+</form>
+<script type="text/javascript">
+	$(".chosen").chosen();
+</script>
+{% endblock content %}

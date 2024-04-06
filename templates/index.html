@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+{% block title %}{% trans "App Name" %}{% endblock title %}
+{% block header %}
+	<script src={% static "js/scroll.js" %}></script>
+{% endblock header %}
+{% block content %}
+<div class="jumbotron">
+	<h1>Электронная очередь “Uya”</h1>
+	<p class="lead"></p>
+	<hr class="my-4">
+	<p>Жилищный вопрос является одним из самых острых в наше время. Существуют различные пути его разрешения: покупка, ипотечные программы банков, получение служебного жилья, получение арендного жилья с последующим выкупом, получение жилья по государственной программе или получение жилья от акимата для отдельных групп граждан. О порядке постановки в очередь на получение жилья от государства мы расскажем в данной статье.
+	<p>Общая схема получения жилья из государственного жилищного фонда выглядит подобным образом:​</p>
+	<ul style="text-align: left;">
+		<li>Сбор и подача необходимых документов в акимат или онлайн.</li>
+		<li>Если с документами все в порядке – получение уведомления в течение 30 календарных дней и отслеживание очереди (<a href="https://egov.kz/services/P18.POSITION/" target="_blank"rel="noopener noreferrer">узнайте, как это сделать онлайн</a>).</li>
+		<li>Рассмотрение жилищной комиссией документов и выдача решения.</li>
+		<li>Заключение договора и получение жилья.</li>
+	</ul>
+	<hr class="my-4">
+	{% if user.is_authenticated %}
+		{% if request.user.groups.all.0.name == "Managements" or request.user.groups.all.0.name == "Commissions" or request.user.groups.all.0.name == "Managers" %}
+			{% if request.user.groups.all.0.name == "Managements" %}
+			<p><a class="nav-link" href="{% url 'report' %}">Отчеты</a></p>
+			{% endif %}
+			{% if request.user.groups.all.0.name == "Commissions" %}
+			<p><a class="nav-link" href="{% url 'statement_index' %}">{% trans "Consider_applications" %}</a></p>
+			{% endif %}
+			{% if request.user.groups.all.0.name == "Managers" %}
+			<p><a class="nav-link" href="{% url 'statement_index' %}">{% trans "Consider_applications" %}</a></p>
+			{% endif %}			
+		{% else %}
+		<p><a class="nav-link" href="{% url 'statement_create' %}">Подать заявление</a></p>
+		<p><a class="nav-link" href="{% url 'statement_list' %}">Отследить заявление</a></p>
+		<p><a class="nav-link" href="{% url 'history_list' %}">Просмотреть историю</a></p>
+		{% endif %}
+	{% endif %}
+</div>
+{% endblock content %}
+
+

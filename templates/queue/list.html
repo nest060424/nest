@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "queues" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "queues" %}</h2>
+{% if queue.count > 0 %}
+<h1>{{ person }}</h1>
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dates" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "status" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in queue %}
+			<tr>
+				<td>
+					<p>{{ n.dates | date:"d.m.Y H:i"}}</p>	
+				</td>
+				<td>
+					<p>{{ n.category }}</p>	
+				</td>
+				<td>
+					<p>{{ n.status }}</p>	
+				</td>
+				<td>
+					{% if request.user.groups.all.0.name == "Commissions" %}
+					<a href="{% url 'queue_edit' n.id %}">{% trans "Change" %}</a> |
+					{% endif %}
+					<a href="{% url 'queue_read' n.id %}">{% trans "View" %}</a> 
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

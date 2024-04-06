@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "statements" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "statements" %}</h2>
+{% if statement.count > 0 %}
+<h1>{{ person }}</h1>
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dates" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "status" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in statement %}
+			{% if n.status_id == 1 %}
+			<tr style="background-color: beige">
+			{% elif n.status_id == 2 %}
+			<tr style="background-color: lightpink">
+			{% elif n.status_id == 3 %}
+			<tr style="background-color: lemonchiffon">
+			{% elif n.status_id == 4 %}
+			<tr style="background-color: lightgreen">
+			{% elif n.status_id == 5 %}
+			<tr style="background-color: lightpink">
+			{% endif %}
+				<td>
+					<p>{{ n.dates | date:"d.m.Y H:i"}}</p>	
+				</td>
+				<td>
+					<p>{{ n.category }}</p>	
+				</td>
+				<td>
+					<p>{{ n.status }}</p>	
+				</td>
+				<td>
+					{% if n.status_id == 2 %}
+					<a href="{% url 'statement_edit' n.id %}">{% trans "Change" %}</a> |
+					{% endif %}
+					<a href="{% url 'statement_read' n.id %}">{% trans "View" %}</a> 
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% endif %}
+{% if queue1 > 0 %}
+	<h2>{% trans "queue" %}</h2>
+	<p>{{ person }}</p>
+	<p>№ в общей очереди: {{ queue1 }}</p>
+	<p>№ в очереди по своей категории ({{ categ }}): {{ queue2 }}</p>
+	<a href="{% url 'export_word' %}">Заявление</a>	
+{% endif %}
+
+{% endblock content %}
+

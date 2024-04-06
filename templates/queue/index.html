@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "queues" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "queues" %}</h2>
+<!--<h2>{{ signature }}</h2>-->
+{% if queue.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>N</th>
+				<th>{% trans "dateq" %}</th>
+				<th>{% trans "person" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "dateq2" %}</th>
+				<th></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in queue %}
+			<tr>
+				<td>
+					<p>{{ forloop.counter }}</p>
+				</td>
+				<td>
+					<p>{{ n.dateq | date:"d.m.Y H:i"}}</p>	
+				</td>
+				<td>
+					<p>{{ n.statement.person }}</p>	
+				</td>
+				<td>
+					<p>{{ n.statement.category }}</p>	
+				</td>
+				<td>
+					<p>{{ n.dateq2 | date:"d.m.Y" }}</p>	
+				</td>
+				<td>
+					{% if request.user.groups.all.0.name == "Managers" %}				
+					<a href="{% url 'queue_edit' n.id %}">{% trans "Change" %}</a> |
+					{% endif %}
+					<a href="{% url 'queue_read' n.id %}">{% trans "View" %}</a> 
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

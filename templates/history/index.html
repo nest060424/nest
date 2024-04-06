@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "historys" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "historys" %}</h2>
+<!--<h2>{{ signature }}</h2>-->
+{% if history.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dateh" %}</th>
+				<th>{% trans "person" %}</th>
+				<th>{% trans "details" %}</th>
+				<th>{% trans "employee" %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in history %}
+			<tr>
+				<td>
+					<p>{{ n.dateh | date:"d.m.Y H:i"}}</p>	
+				</td>
+				<td>
+					<p>{{ n.statement }}</p>	
+				</td>
+				<td>
+					<p>{{ n.details }}</p>	
+				</td>
+				<td>
+					{% if n.employee != None %}
+					<p>{{ n.employee.department }}:<br>	
+					{{ n.employee }}</p>	
+					{% endif %}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% endif %}
+{% endblock content %}
+

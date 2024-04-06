@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% trans "newss" %}{% endblock title %}
+{% block header %}{% endblock header %}
+{% block content %}
+<h2>{% trans "newss" %}</h2>
+{% if news.count > 0 %}
+<div class="row">
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "daten" %}</th>
+				<th>{% trans "title" %}</th>
+				<!--<th></th>-->
+				<th><a href="{% url 'news_create'%}">{% trans "Add" %}</a></th>				
+			</tr>
+		</thead>
+		<tbody>
+			{% for n in news %}
+			<tr>
+				<td>
+					<p>{{ n.daten }}</p>
+				</td>
+				<td>
+					<p>{{ n.title }}</p>	
+				</td>
+				<!--
+				<td>
+					{% if n.photo.url != None %}
+					<img style="width:100%; max-width:256px; padding:10px" src="{{ n.photo.url}}" alt="{{ n.title }}">
+					{% endif %}	
+				</td>
+				-->
+				<td>
+					<a href="{% url 'news_edit' n.id %}">{% trans "Change" %}</a> |
+					<a href="{% url 'news_read' n.id %}">{% trans "View" %}</a> |
+					<a onclick="return confirm('Удалить запись?')" href="{% url 'news_delete' n.id %}">{% trans "Delete" %}</a>
+				</td>			
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+{% else %}
+<a href="{% url 'news_create'%}">{% trans "Create" %}</a>
+{% endif %}
+{% endblock content %}
+

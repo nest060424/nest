@@ -1,0 +1,109 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block title %}{% endblock title %}
+{% block header %}{% endblock header %} 
+{% block content %}
+<div class="row">
+	<h1 align="center">{% trans "report" %}</h1>
+</div>
+<hr>
+<div>
+	<h3>Заявления</h3>
+	<form method="POST">
+		{% csrf_token %}
+		<select name="item_status_id">
+			{% for entry in status %}
+				<option value="{{ entry.id }}">{{ entry.title }}</option>
+			{% endfor %}
+		</select>
+		<button type="submit" class="btn btn-outline-success" style="width:120px" name="btnStatement">{% trans "Apply" %}</button>	
+	</form>
+	<table id="myTable" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>{% trans "dates" %}</th>
+				<th>{% trans "person" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "status" %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if statement.count > 0 %}		
+				{% for n in statement %}
+					{% if n.status_id == 1 %}
+					<tr style="background-color: beige">
+					{% elif n.status_id == 2 %}
+					<tr style="background-color: lightpink">
+					{% elif n.status_id == 3 %}
+					<tr style="background-color: lemonchiffon">
+					{% elif n.status_id == 4 %}
+					<tr style="background-color: lightgreen">
+					{% elif n.status_id == 5 %}
+					<tr style="background-color: lightpink">
+					{% endif %}
+						<td>
+							<p>{{ n.dates | date:"d.m.Y H:i"}}</p>	
+						</td>
+						<td>
+							<p>{{ n.person }}</p>	
+						</td>
+						<td>
+							<p>{{ n.category }}</p>	
+						</td>
+						<td>
+							<p>{{ n.status }}</p>	
+						</td>
+					</tr>
+				{% endfor %}
+			{% endif %}	
+		</tbody>
+	</table>
+</div>	
+<hr>
+<div>
+	<h3>Очередь</h3>			
+	<form method="POST">
+		{% csrf_token %}
+		<select name="item_category_id">
+			{% for entry in category %}
+				<option value="{{ entry.id }}">{{ entry.title }}</option>
+			{% endfor %}
+		</select>
+		<button type="submit" class="btn btn-outline-success" style="width:120px" name="btnQueue">{% trans "Apply" %}</button>	
+	</form>
+	<table id="myTable2" class="cell-border hover stripe" style="width:100%">
+		<thead>
+			<tr>
+				<th>N</th>
+				<th>{% trans "dateq" %}</th>
+				<th>{% trans "person" %}</th>
+				<th>{% trans "category" %}</th>
+				<th>{% trans "dateq2" %}</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% if queue.count > 0 %}
+				{% for n in queue %}
+				<tr>
+					<td>
+						<p>{{ forloop.counter }}</p>
+					</td>
+					<td>
+						<p>{{ n.dateq | date:"d.m.Y H:i"}}</p>	
+					</td>
+					<td>
+						<p>{{ n.statement.person }}</p>	
+					</td>
+					<td>
+						<p>{{ n.statement.category }}</p>	
+					</td>
+					<td>
+						<p>{{ n.dateq2 | date:"d.m.Y H:i" }}</p>	
+					</td>
+				</tr>
+				{% endfor %}
+			{% endif %}
+		</tbody>
+	</table>
+</div>	
+{% endblock content %}
