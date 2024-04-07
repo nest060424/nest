@@ -8,7 +8,11 @@
 </div>
 <hr>
 <div>
-	<h3>Заявления</h3>
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Мәлімдемелер</h3>
+	{% else %}
+		<h3>Заявления</h3>
+	{% endif %}	
 	<form method="POST">
 		{% csrf_token %}
 		<select name="item_status_id">
@@ -61,7 +65,11 @@
 </div>	
 <hr>
 <div>
-	<h3>Очередь</h3>			
+	{% if LANGUAGE_CODE == 'kk' %}
+		<h3>Кезек</h3>			
+	{% else %}
+		<h3>Очередь</h3>			
+	{% endif %}
 	<form method="POST">
 		{% csrf_token %}
 		<select name="item_category_id">

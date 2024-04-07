@@ -10,25 +10,67 @@
 		</div>
 		<div class="card-body">					
 			<div class="row">
-				<h5><a href="https://www.akorda.kz/ru" target="_blank">Официальный сайт Президента Республики Казахстан</a></h5>
+				<h5><a href="https://www.akorda.kz/ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасы Президентінің ресми сайты
+				{% else %}
+					Официальный сайт Президента Республики Казахстан
+				{% endif %}								
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="https://www.parlam.kz/ru" target="_blank">Официальный сайт Парламента Республики Казахстан</a></h5>
+				<h5><a href="https://www.parlam.kz/ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасы Парламентінің ресми сайты
+				{% else %}
+					Официальный сайт Парламента Республики Казахстан
+				{% endif %}		
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="https://primeminister.kz/ru" target="_blank">Официальный информационный ресурс Премьер-Министра Республики Казахстан</a></h5>
+				<h5><a href="https://primeminister.kz/ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасы Премьер-Министрінің ресми ақпараттық ресурсы
+				{% else %}
+					Официальный информационный ресурс Премьер-Министра Республики Казахстан
+				{% endif %}								
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="https://egov.kz/cms/ru" target="_blank">Электронное правительство Республики Казахстан</a></h5>
+				<h5><a href="https://egov.kz/cms/ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасының электрондық үкіметі
+				{% else %}
+					Электронное правительство Республики Казахстан
+				{% endif %}							
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="https://www.gov.kz/memleket/entities/adilet?lang=ru" target="_blank">Министерство юстиции Республики Казахстан</a></h5>
+				<h5><a href="https://www.gov.kz/memleket/entities/adilet?lang=ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасының Әділет министрлігі
+				{% else %}
+					Министерство юстиции Республики Казахстан
+				{% endif %}								
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="https://www.gov.kz/memleket/entities/qriim?lang=ru" target="_blank">Министерство внутренних дел РК</a></h5>
+				<h5><a href="https://www.gov.kz/memleket/entities/qriim?lang=ru" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					ҚР Ішкі істер министрлігі
+				{% else %}
+					Министерство внутренних дел РК
+				{% endif %}								
+				</a></h5>
 			</div>
 			<div class="row">
-				<h5><a href="http://zan.gov.kz/ru/" target="_blank">Эталонный контрольный банк нормативных правовых документов Республики Казахстан</a></h5>
+				<h5><a href="http://zan.gov.kz/ru/" target="_blank">
+				{% if LANGUAGE_CODE == 'kk' %}
+					Қазақстан Республикасы нормативтік құқықтық құжаттарының эталондық бақылау банкі
+				{% else %}
+					Эталонный контрольный банк нормативных правовых документов Республики Казахстан
+				{% endif %}								
+				</a></h5>
 			</div>			
 		</div>
 		<div class="card-footer text-muted">
